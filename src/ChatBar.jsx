@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
-function ChatBar ({addMsg, user }) {
+// Chat bar component, where a user can edit their nickname and send a message to everyone else
+function ChatBar ({addMsg, setUser, user }) {
+  // Catching the push Enter button event, and sedning the message up to the parent state thru the function passed down
   const enterKey = e => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -8,18 +10,15 @@ function ChatBar ({addMsg, user }) {
       e.target.value = "";
     }
   }   
-  // const nameChange = e => {
-  //   if (e.key === "Enter") {
-  //     e.preventDefault();
-  //     changeUser = 
-  //   }
-  // }
+  // Calling the setUser function on focus out of the name field
+  const focusOut = e => {
+      setUser(e.target.value);
+  }
+
   return (
     <footer className="chatbar" >
-
-      <input className="chatbar-username" placeholder="Your Name (Optional)" defaultValue={user.name}/>
-      <input className="chatbar-message" name="msg" onKeyPress={enterKey} placeholder="Type a message and hit ENTER" />
-
+      <input className="chatbar-username" placeholder="Your Name" onBlur={focusOut} defaultValue={user.name}/>
+      <input className="chatbar-message" onKeyPress={enterKey} placeholder="Type a message and hit ENTER" />
     </footer>    
   );
 }
