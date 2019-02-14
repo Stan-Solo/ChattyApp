@@ -21,17 +21,20 @@ class App extends Component {
   // Send the message to the server
   addMsg(content) {
     const username = this.state.currentUser.name;
-    this.socket.send(JSON.stringify({username, content}));
+    this.socket.send(JSON.stringify({username, content, type: "postMessage"}));
   }
 
   // Allows user to change name
   setCurrentUser(user) {
-    this.setState( {currentUser: {name: user} } )
+    this.socket.send(JSON.stringify({newUser: user, oldUser: this.state.currentUser.name, type: "postNotification" }));
+    this.setState( {currentUser: {name: user} } );
+    console.log(`message: ${user}`)
+
   }
 
   // This happens once the page gets rendered
   componentDidMount() {
-    this.socket = new WebSocket('ws://localhost:3001');
+    this.socket = new WebSocket('ws://localhost:3001'); 
 
     // Event listener that is fired when socket is connected
     this.socket.onopen = () => {
@@ -40,9 +43,13 @@ class App extends Component {
     // Appends the received and modified message from the serves to the state
     this.socket.onmessage = (function ({data}) {
 ///////////// DO THE NOTIFICATIONS HERE
-
-
-      this.setState({messages: this.state.messages.concat(JSON.parse(data))});
+      
+      console.log(`message: ${data}`)
+      let receivedData = JSON.parse(data);
+      if (!receivedData.type) {
+        receivedData.username = null;
+      }
+      this.setState({messages: this.state.messages.concat(receivedData)});
     }).bind(this);
     // Event listener that is fired when socket is closed
     this.onclose = () => {
