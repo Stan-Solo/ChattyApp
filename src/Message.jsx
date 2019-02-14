@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+// Message component, which displays the username and message; get appended to messagelist
 function Message ({ username, message }) {
   return (
     <div className="message">

@@ -14,7 +14,7 @@ function ChatBar ({addMsg, setUser, user }) {
   const focusOut = e => {
       setUser(e.target.value);
   }
-
+  // Html component
   return (
     <footer className="chatbar" >
       <input className="chatbar-username" placeholder="Your Name" onBlur={focusOut} defaultValue={user.name}/>

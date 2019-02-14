@@ -1,5 +1,3 @@
-// server.js
-
 const express = require('express');
 const SocketServer = require('ws').Server;
 const uuid = require ('uuid');
@@ -16,28 +14,26 @@ const server = express()
 // Create the WebSockets server
 const wss = new SocketServer({ server });
 
-// Set up a callback that will run when a client connects to the server
-// When a client connects they are assigned a socket, represented by
-// the ws parameter in the callback.
-
 // Our clients, sockets
 let clientBase = [];
 
+// Adding sockets to the array, and notifying of successful connection in the log
 wss.on('connection', (ws) => {
   console.log('Client connected!!!!!!');
   clientBase.push(ws);
   
-  // Event listener for new message object
+  // Receives message from the clientside, adds a UUID
   ws.on('message', (msg) => {
     let message = JSON.parse(msg);
     message.id = uuid();
 
+    // If the socket is connected, sends back the modified message to everbody who is connected 
     clientBase.forEach(client => {
       if (client.readyState === ws.OPEN) {
         client.send(JSON.stringify(message));
       }
     })
   });
-  // Set up a callback for when a client closes the socket. This usually means they closed their browser.
+  // Set up a callback for when a client closes the socket
   ws.on('close', () => console.log('Client disconnected!!!!'));
 });  
