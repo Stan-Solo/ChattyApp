@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { cpus } from 'os';
 
 // Chat bar component, where a user can edit their nickname and send a message to everyone else
 function ChatBar ({addMsg, setUser, user }) {
@@ -17,10 +16,10 @@ function ChatBar ({addMsg, setUser, user }) {
   }   
   // Calling the setUser function on focus out of the name field
   const focusOut = e => {
-      setUser(e.target.value);
+      if (user.name !== e.target.value){
+        setUser(e.target.value);
+      }
   }
-
-  console.log(user);
   // Html component
   return (
     <footer className="chatbar" >
