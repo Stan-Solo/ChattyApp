@@ -4,9 +4,9 @@
 
 ### Final Product
 
-!["1"](https://raw.github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/01.png )
-!["2"](https://raw.github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/02.png )
-!["3"](https://raw.github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/03.png )
+!["1"](https://github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/01.png?raw=true )
+!["2"](https://github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/02.png?raw=true )
+!["3"](https://github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/03.png?raw=true )
 
 ### Features
 
