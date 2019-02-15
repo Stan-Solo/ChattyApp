@@ -20,19 +20,19 @@
 
 Install the dependencies and start up the websocket server.
 
-*'cd chatty-server'*
-*'npm install'*
-*npm start'*
+`cd chatty-server`
+`npm install`
+`npm start`
 
 Install the dependencies and fire up the front-end server server
 
-*'npm install'*
-*'npm start'*
+`npm install`
+`npm start`
 navigate to http://localhost:3000
 
 ### Dependencies
 
-#### Client side:
+##### Client side:
 - babel-core
 - babel-loader
 - babel-preset-es2015
@@ -47,7 +47,7 @@ navigate to http://localhost:3000
 - react
 - react-dom
 
-#### Server:
+##### Server:
 - express
 - ws
 - uuid
