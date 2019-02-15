@@ -4,9 +4,9 @@
 
 ### Final Product
 
-!["1"](https://raw.githubusercontent.com/Ironwhisper/tweeter/master/Screenshots/Compose.png "Write down your message!")
-!["2"](https://raw.githubusercontent.com/Ironwhisper/tweeter/master/Screenshots/Tweets.png "See what others wrote!")
-!["3"](https://raw.githubusercontent.com/Ironwhisper/tweeter/master/Screenshots/Like.png "Like what you like!")
+!["1"](https://raw.github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/01.png )
+!["2"](https://raw.github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/02.png )
+!["3"](https://raw.github.com/Stan-Solo/ChattyApp/blob/master/Screenshots/03.png )
 
 ### Features
 
