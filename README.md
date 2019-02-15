@@ -20,15 +20,15 @@
 
 Install the dependencies and start up the websocket server.
 
-*'cd chatty-server
-npm install
-npm start'*
+*'cd chatty-server'*
+*'npm install'*
+*npm start'*
 
 Install the dependencies and fire up the front-end server server
 
-*'npm install
-npm start
-navigate to http://localhost:3000 '*
+*'npm install'*
+*'npm start'*
+navigate to http://localhost:3000
 
 ### Dependencies
 
