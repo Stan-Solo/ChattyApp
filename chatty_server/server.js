@@ -9,9 +9,9 @@ const PORT = 3001;
 // Create a new express server
 const server = express()
 
-   // Make the express server serve static assets (html, javascript, css) from the /public folder
-  .use(express.static('public'))
-  .listen(PORT, '0.0.0.0', 'localhost', () => console.log(`Listening on ${ PORT }`));
+// Make the express server serve static assets (html, javascript, css) from the /public folder
+.use(express.static('public'))
+.listen(PORT, '0.0.0.0', 'localhost', () => console.log(`Listening on ${ PORT }`));
 
 // Create the WebSockets server
 const wss = new SocketServer({ server });
@@ -24,7 +24,7 @@ let counter = 0;
 wss.on('connection', (ws) => {
   console.log('Client connected!');
   clientBase.push(ws);
-
+  
   // Setting initial color for the user at this socket
   ws.color = "black";
   // Counter keeps track of all users currently connected, increases on every user connection
@@ -60,14 +60,14 @@ wss.on('connection', (ws) => {
   });
   // Set up a callback for when a client closes the socket
   ws.on('close', () => {
-  console.log('Client disconnected!');
-  // Counter decreases on every user disconnect, updates
-  counter --;
-  clientBase.forEach(client => {
-    if (client.readyState === ws.OPEN) {
-      const count = {type: "counter", content: `# of users online: ${counter}` };
-      client.send(JSON.stringify(count));
-    }
-  });
+    console.log('Client disconnected!');
+    // Counter decreases on every user disconnect, updates
+    counter --;
+    clientBase.forEach(client => {
+      if (client.readyState === ws.OPEN) {
+        const count = {type: "counter", content: `# of users online: ${counter}` };
+        client.send(JSON.stringify(count));
+      }
+    });
   });
 });  
