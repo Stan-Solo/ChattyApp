@@ -5,7 +5,7 @@ function ChatBar ({addMsg, setUser, user }) {
   const color = user.color;
   const userColor = {
     color
-  }
+  };
   // Catching the push Enter button event, and sedning the message up to the parent state thru the function passed down
   const enterKey = e => {
     if (e.key === "Enter") {

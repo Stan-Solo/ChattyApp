@@ -17,7 +17,7 @@ class App extends Component {
       currentUser: {name: "Anonymous", color: "black"},
       messages: [],
       counterMsg: {},
-      loading: true,
+      loading: true
     };
   }
 
@@ -30,7 +30,7 @@ class App extends Component {
   // Allows user to change name
   setCurrentUser(user) {
     this.socket.send(JSON.stringify({newUser: user, oldUser: this.state.currentUser.name, type: "postNotification" }));
-    this.setState( {currentUser: {name: user} } );
+    this.setState({currentUser: {name: user}});
   }
 
   // This happens once the page gets rendered
@@ -43,9 +43,9 @@ class App extends Component {
     };
     // Appends the received and modified message from the serves to the state
     this.socket.onmessage = (function ({data}) {
-      let receivedData = JSON.parse(data);
-      
-      // A switch statement to sort out between all the incoming messages
+      const receivedData = JSON.parse(data);
+
+      // A switch statement to sort out between all the incoming messages and perform appropriate actions
       switch (receivedData.type) {
         case ("counter") :
           this.setState({
@@ -98,7 +98,7 @@ class App extends Component {
           <MessageList messages={this.state.messages}  />
           <ChatBar addMsg={this.addMsg} setUser={this.setCurrentUser} user={this.state.currentUser}/>
         </div>
-        )
+        );
       }
     }
   }

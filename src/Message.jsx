@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 function Message ({ username, message, color }) {
   const msgColor = {
     color
-  }
+  };
   return (
     <div className="message">
       <span className="message-username" style={msgColor}>{username}</span>

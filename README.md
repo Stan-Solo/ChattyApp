@@ -1,45 +1,53 @@
-React Boilerplate
-=====================
+# Chatty! 
 
-A minimal and light dev environment for ReactJS.
+#### A single page, minimal chat app. Built with React and Websockets. Users send and receive messages in real time.
 
-### Usage
+### Final Product
 
-Clone the boilerplate and create your own git repo.
+!["1"](https://raw.githubusercontent.com/Ironwhisper/tweeter/master/Screenshots/Compose.png "Write down your message!")
+!["2"](https://raw.githubusercontent.com/Ironwhisper/tweeter/master/Screenshots/Tweets.png "See what others wrote!")
+!["3"](https://raw.githubusercontent.com/Ironwhisper/tweeter/master/Screenshots/Like.png "Like what you like!")
 
-```
-git clone git@github.com:lighthouse-labs/react-simple-boilerplate.git
-cd react-simple-boilerplate
-git remote rm origin
-git remote add origin [YOUR NEW REPOSITORY]
-# Manually update your package.json file
-```
+### Features
 
-Install the dependencies and start the server.
+- A user can enter the app and send text messages to other connected users
+- Every user can change their name
+- Get a random color assigned upon every name change!
+- Displays the number of users currently connected
+- All users are notified whenever somebody changes their user name
 
-```
+### Installation
+
+Install the dependencies and start up the websocket server.
+
+*'cd chatty-server
 npm install
+npm start'*
+
+Install the dependencies and fire up the front-end server server
+
+*'npm install
 npm start
-open http://localhost:3000
-```
-
-### Static Files
-
-You can store static files like images, fonts, etc in the `build` folder.
-
-For example, if you copy a file called my_image.png into the build folder you can access it using `http://localhost:3000/build/my_image.png`.
-
-### Linting
-
-This boilerplate project includes React ESLint configuration.
-
-```
-npm run lint
-```
+navigate to http://localhost:3000 '*
 
 ### Dependencies
 
-* React
-* Webpack
-* [babel-loader](https://github.com/babel/babel-loader)
-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+#### Client side:
+- babel-core
+- babel-loader
+- babel-preset-es2015
+- babel-preset-react
+- css-loader
+- node-sass
+- sass-loader
+- sockjs-client
+- style-loader
+- webpack
+- webpack-dev-server
+- react
+- react-dom
+
+#### Server:
+- express
+- ws
+- uuid
